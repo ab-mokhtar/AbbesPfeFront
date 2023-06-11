@@ -1,0 +1,9 @@
+.card-class{
+    margin: 3%;
+    width: 14%;
+    text-align: left;
+    float: left;
+}
+.cardcontainer{
+    background-color: #2F2F2F;
+}

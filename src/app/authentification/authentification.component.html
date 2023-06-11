@@ -1,0 +1,67 @@
+
+<html>
+<head>
+	<title>Animated Login Form</title>
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<!-- src="./img/wave.png"      hedhi kenet fel div li tahetha-->
+	<img class="wave" src="../../assets/Image/wave.png">
+	<div class="container">
+        <!-- <img src="../../assets/Image/img.jpg"/> -->
+		<div class="img">
+			<img src="../../assets/Image/perso.svg" style="width: 500px;">
+		</div>
+		<div class="login-content">
+			<form action="index.html">
+				<img class="sbslogo" src="../../assets/Image/sbs.webp">
+				<h2 class="title">Welcome</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input type="text" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input">
+            	   </div>
+            	</div>
+            	<a routerLink="/reset" routerLinkActive="active" style="	display: block; text-align: right;"><div class="forget">Mot de passe oublié ?</div></a>
+					<input type="submit" class="btn" value="Connexion" routerLink="/menubar">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+	const inputs = document.querySelectorAll(".input");
+
+
+function addcl(){
+	let parent = this.parentNode.parentNode;
+	parent.classList.add("focus");
+}
+
+function remcl(){
+	let parent = this.parentNode.parentNode;
+	if(this.value == ""){
+		parent.classList.remove("focus");
+	}
+}
+
+
+inputs.forEach(input => {
+	input.addEventListener("focus", addcl);
+	input.addEventListener("blur", remcl);
+});
+</script>
+<!-- <app-menubar></app-menubar> -->

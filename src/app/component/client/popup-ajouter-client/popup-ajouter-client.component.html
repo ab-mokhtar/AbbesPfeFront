@@ -1,0 +1,22 @@
+<form [formGroup]="validateForm" >
+    <h1 mat-dialog-title>Ajouter un Client</h1>
+    <div mat-dialog-content>
+       
+       <mat-form-field>
+        <mat-label>Nom</mat-label>
+        <input matInput formControlName="nom">
+       </mat-form-field>
+       <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description">
+       </mat-form-field>
+     
+    
+    
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button type="submit" color="primary" (click)="createClient()">Enregistrer</button>
+      <button (click)="closepopup()" mat-raised-button color="warn">Annuler</button>
+      <!-- <button mat-raised-button [mat-dialog-close]="closemessage" color="accent">Cancel</button> -->
+    </div>
+    </form>

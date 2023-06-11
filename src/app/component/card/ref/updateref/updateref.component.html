@@ -1,0 +1,41 @@
+<div class="container">
+    <form class="example-form" [formGroup]="myform" (ngSubmit)="save()">
+        <p>
+            <mat-form-field appearance="fill">
+              <mat-label>Type de reference</mat-label>
+              <input matInput placeholder="Type de reference" formControlName="typeReference" required [value]="ref.typeReference">
+              <mat-icon matSuffix>public</mat-icon>
+              <mat-hint>Hint</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>valeur de reference</mat-label>
+              <input matInput placeholder="valeur de reference" formControlName="valeurReference" required [value]="ref.valeurReference">
+              <mat-icon matSuffix>merge_type</mat-icon>
+              <mat-hint>valeur de reference</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>lien de Reference</mat-label>
+              <input matInput placeholder="lien de Reference" formControlName="lienReference" required [value]="ref.lienReference">
+              <mat-icon matSuffix>merge_type</mat-icon>
+              <mat-hint>lien de Reference</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>note de Reference</mat-label>
+              <input matInput placeholder="note de Reference" formControlName="noteReference" required [value]="ref.noteReference">
+              <mat-icon matSuffix>merge_type</mat-icon>
+              <mat-hint>note de Reference</mat-hint>
+            </mat-form-field>
+          </p>
+          <p>      
+            <button mat-fab extended color="accent" [disabled]="myform.invalid">Update</button>
+            <button mat-fab extended color="Basic"s>Annuler</button>
+        </p>
+    
+      </form>
+    </div>

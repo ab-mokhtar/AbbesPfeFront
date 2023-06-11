@@ -1,0 +1,145 @@
+<form class="example-form">
+  <div class="form-group">
+    <label for="objetDemande">Objet demande</label>
+    <input class="form-control" [(ngModel)]="demande.objetDemande" name="objetDemande" id="objetDemande">
+  </div>
+
+  <table class="table table-bordered">
+    <tr>
+      <td>
+        <div class="form-group">
+          <label for="planifie">Planifié</label>
+          <input class="form-control" [(ngModel)]="demande.planifie" name="planifie" id="planifie">
+        </div>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="opportunite">Opportunité</label>
+          <input class="form-control" [(ngModel)]="demande.opportunite" name="opportunite" id="opportunite">
+        </div>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="bu">BU</label>
+          <input class="form-control" [(ngModel)]="demande.bu" name="bu" id="bu">
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="form-group">
+    <label for="resume">Résumé</label>
+    <textarea class="form-control" [(ngModel)]="demande.resume" name="resume" id="resume"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="contexte">Contexte et Remarques</label>
+    <textarea class="form-control" [(ngModel)]="demande.contexte" name="contexte" id="contexte"></textarea>
+  </div>
+
+  <table class="table table-bordered">
+    <tr>
+      <td>
+        <div class="form-group">
+          <label for="anticipation">Anticipation</label>
+          <input class="form-control" [(ngModel)]="demande.anticipation" name="anticipation" id="anticipation">
+        </div>
+      </td>
+      
+      <td>
+        <div class="form-group">
+          <label for="domaine">Domaine</label>
+          <input class="form-control" [(ngModel)]="demande.dommaine" name="domaine" id="domaine">
+        </div>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="trigrammes">Trigramme</label>
+          <input class="form-control" [(ngModel)]="demande.typeTrigramme" name="trigrammes" id="trigrammes">
+        </div>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="contrainteClient">Trigramme value</label>
+          <textarea class="form-control" [(ngModel)]="demande.valeurTrigramme" name="contrainteClient" id="contrainteClient"></textarea>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <table class="table table-bordered">
+    <tr>
+      <td>
+        <div class="form-group">
+          <label for="reference">Reference</label>
+          <select class="form-control" [(ngModel)]="demande.reference.id"name="reference" id="reference">
+            <option *ngFor="let reference of references" [value]="reference.id" [selected]="demande.reference.id">{{ reference.typeReference }}</option>
+          </select>
+        </div>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="charge">Charge</label>
+          <select class="form-control" [(ngModel)]="demande.charge.id" name="charge" id="charge">
+            <option *ngFor="let charge of charges" [value]="charge.id" [selected]="demande.charge.id===charge.id">{{ charge.typeCharge }}</option>
+          </select>
+        </div>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="statut">Statut</label>
+          <select class="form-control" [(ngModel)]="demande.statut.id" name="statut" id="statut">
+            <option *ngFor="let statut of statuts" [value]="statut.id"  [selected]="demande.statut.id===statut.id">{{ statut.typeStatut }}</option>
+          </select>
+        </div>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="phase">Client</label>
+          <select class="form-control" [(ngModel)]="demande.client.id" name="phase" id="phase">
+            <option *ngFor="let phase of clients" [value]="phase.id"  [selected]=" demande.client.id===phase.id">{{ phase.nom }}</option>
+          </select>
+        </div>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="phase">Priorite</label>
+          <select class="form-control" [(ngModel)]="demande.priorite.id" name="phase" id="phase">
+            <option *ngFor="let pr of priorites" [value]="pr.id" [selected]="demande.priorite.id===pr.id">{{ pr.valeurPriorite }}</option>
+
+          </select>
+        </div>
+      </td>
+    </tr>
+
+    <tr *ngFor="let line of lines; let i = index">
+      <td>
+        <div class="form-group">
+          <label for="typedate">Type de date</label>
+          <select class="form-control" [(ngModel)]="line.typeDate.id" (selectionChange)="onTypedateChange($event, i)" name="typedate{{i}}" id="typedate{{i}}">
+            <option *ngFor="let typedate of typedates" [value]="typedate.id" [selected]="line.typeDate.id === typedate.id">{{ typedate.type }}</option>
+          </select>
+        </div>
+      </td>
+      <td>
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" class="form-control" [(ngModel)]="line.valeurDate" name="date{{i}}" required (dateChange)="onDateChange($event, i)"  id="date{{i}}">
+
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="form-group" style="margin-top: 25px;">
+          <button type="button" class="btn btn-success" (click)="ajouterLigne()">Ajouter une Date</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+  
+  <div class="form-group" style="margin-top: 25px;">
+    <button type="button" class="btn btn-success" (click)="saveDemand()">update</button>
+  </div>
+</form>

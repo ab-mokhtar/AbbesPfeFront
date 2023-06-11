@@ -1,0 +1,30 @@
+
+.example-form {
+    min-width: auto;
+    max-width: auto;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+  }
+  
+  .example-full-width {
+    width: 100%;
+    padding: 15px;
+  }
+  
+  td {
+    padding-right: 8px;
+  }
+.nav-item{
+  list-style-type: none;
+}
+#dropdownsbut{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-width: 100%; 
+}
+button{
+  min-width: 90%;
+}

@@ -1,0 +1,17 @@
+.nav-link{
+    font-size: 18px;
+    color: black;
+    font-family: Helvetica;
+}
+.navtext{
+    color: orangered;
+}
+.LOGO{
+    margin-top: -50px;
+    margin-left: 2%;
+    position:sticky; 
+    top:0;
+    padding-bottom: 2%;
+}
+
+

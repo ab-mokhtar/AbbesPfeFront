@@ -1,0 +1,26 @@
+<div class="container">
+<form class="example-form" [formGroup]="myform" (ngSubmit)="save()">
+    <p>
+        <mat-form-field appearance="fill">
+          <mat-label>champ de typage</mat-label>
+          <input matInput placeholder="Type de statu" formControlName="type" required >
+          <mat-icon matSuffix>public</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>champ de valeur</mat-label>
+          <input matInput placeholder="valeur de statu" formControlName="hint" required>
+          <mat-icon matSuffix>merge_type</mat-icon>
+          <mat-hint>Hint</mat-hint>
+        </mat-form-field>
+      </p>
+     
+      <p>      
+        <button mat-fab extended color="accent" [disabled]="myform.invalid">Valider</button>
+        <button mat-fab extended color="Basic"s>Annuler</button>
+    </p>
+
+  </form>
+</div>

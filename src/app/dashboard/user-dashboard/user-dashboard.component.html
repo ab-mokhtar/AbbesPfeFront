@@ -1,0 +1,104 @@
+
+<div style="background-color: whitesmoke;">
+<app-usernav></app-usernav>
+<div class="card-container">
+    <mat-card style="height: 120px; width: 170px;
+    background-image: url(../../../assets/Image/darkbck.webp);    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
+        <div class="bck" style=" margin-left: 45px;">
+      <mat-card-header >
+        <mat-card-title style="margin-left: -45px;">Jira</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+      </mat-card-actions>
+    </div>
+    </mat-card>
+  
+    <mat-card style="height: 120px; width: 170px;
+    background-image: url(../../../assets/Image/darkbck.webp);    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
+        <div class="bck2" style=" margin-left: 65px;margin-top: 30px;">
+      <mat-card-header> 
+        <mat-card-title style="margin-left: -70px; margin-top: -30px;font-weight: bold;">Redmine</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+
+      </mat-card-actions>
+      </div>
+    </mat-card>
+  
+    <mat-card style="height: 120px; width: 170px;
+    background-image: url(../../../assets/Image/darkbck.webp);    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
+        <div class="bck3">
+      <mat-card-header>
+        <mat-card-title style="margin-top: -45px;margin-left: 75px;">EasyVista</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+      </mat-card-actions></div>
+    </mat-card>
+  
+    <mat-card style="height: 120px; width: 170px;
+    background-image: url(../../../assets/Image/darkbck.webp);    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
+        <div class="bck4" >
+      <mat-card-header>
+        <mat-card-title></mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+      </mat-card-actions>
+    </div>
+    </mat-card>
+  </div>
+  
+<div class="dashboard-container" style="
+/* background-image: url(../../assets/Image/dashbck.jpg);   */
+background-color: whitesmoke;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;">
+
+    <div class="side-by-side">
+      <div class="column" style="margin-top: 50px ;">
+        <div class="box"><h3>Nombre des Manageurs</h3><h1>{{NbManageurs}}</h1></div>
+        <div class="box"><h3>Nombre des Développeurs</h3><h1>{{NBDevs}}</h1></div>
+        <div class="box"><h3>Nombre des Employers</h3><h1>{{NbEmployers}}</h1></div>
+        <div class="box"><h3>Nombre des demandes</h3><h1>{{NbDemandes}}</h1></div>
+        <div class="box"><h3>Nombre des actions</h3><h1>{{NbActions}}</h1></div>
+      </div>
+      <div class="column" style="margin-top: 30px ;">
+        <div class="mdbox"><h3>Status des actions</h3>
+            <router-outlet routerLinkActive="active">
+            <app-dashchart></app-dashchart>
+        </router-outlet>
+    </div>
+        <div class="mdbox"><h3>Priorités des actions</h3>
+            <router-outlet routerLinkActive="active">
+                <app-dashchart2></app-dashchart2>
+            </router-outlet>
+        </div>
+        <div id="status-chart"></div> <!-- Placeholder for the chart -->
+      </div>
+      <div class="column" style="margin-top: 40px ;">
+        <div class="bottombox"><h2>Notes Personnel</h2>
+            <router-outlet routerLinkActive="active">
+                <app-note></app-note>
+                </router-outlet>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

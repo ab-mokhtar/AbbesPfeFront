@@ -1,0 +1,27 @@
+<div class="container">
+  <form class="example-form" [formGroup]="myform" (ngSubmit)="save()">
+      <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Type de Priorite</mat-label>
+            <input matInput placeholder="Type de Priorite" formControlName="typePriorite" required >
+            <mat-icon matSuffix>public</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>valeur de Priorite</mat-label>
+            <input matInput placeholder="valeur de Priorite" formControlName="valeurPriorite" required>
+            <mat-icon matSuffix>merge_type</mat-icon>
+            <mat-hint>valeur de Priorite</mat-hint>
+          </mat-form-field>
+        </p>
+      
+       
+        <p>      
+          <button mat-fab extended color="accent" [disabled]="myform.invalid">Valider</button>
+          <button mat-fab extended color="Basic"s>Annuler</button>
+      </p>
+  
+    </form>
+  </div>

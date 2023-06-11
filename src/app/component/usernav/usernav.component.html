@@ -1,0 +1,89 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="position-sticky" style="margin-left: 75px; margin-bottom: -10px;">
+
+        </div>
+        <!-- Left links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" style="margin-left: 15px;">
+            <button mat-button>
+            <div class="navtext">
+                <a class="nav-link" routerLinkActive="active" routerLink="/maint">Demande</a>
+            </div>
+          </button>
+          </li>
+          <button mat-button>
+          <li class="nav-item" style="margin-left: 15px;">
+            <a class="nav-link" routerLinkActive="active" routerLink="/action">Action</a>
+          </li></button>
+          <button mat-button>
+            <li class="nav-item" style="margin-left: 15px;">
+              <a class="nav-link" routerLinkActive="active" routerLink="#">Planification</a>
+            </li>
+          </button>
+          <button mat-button>
+          <li class="nav-item" style="margin-left: 15px;">
+            <a class="nav-link" routerLinkActive="active" routerLink="#">Livraison</a>
+          </li></button>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+  
+      <!-- Right elements -->
+
+      <div class="d-flex align-items-center" style="border-radius: 25px;">
+        <!-- Icon -->
+        <a class="text-reset me-3">
+          <button mat-button><a routerLink="/action">
+             <i 
+             class="fas fa-circle-plus fa-lg" 
+             id="abcde"
+             style="color: orangered;"
+             ></i></a></button>
+             
+          <button mat-button style="border-radius: 25px;margin-right: -15px;padding:-15px;"><a routerLink="/home">
+            <i 
+                class="fas fa-house fa-sm"
+                role="button"
+                style="background:SkyBlue;"
+                
+            ></i></a></button>
+        </a>
+              <!-- Right elements -->
+      <button mat-button [matMenuTriggerFor]="beforeMenu"><i class="fas fa-qrcode fa-lg" style="color: SkyBlue;"></i></button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item>Profil</button>
+        <button mat-menu-item><a routerLinkActive="active" routerLink="/auth">Deconnecter</a></button>
+      </mat-menu>
+    </div>
+      </div>
+      
+  </nav>
+  <!-- LOGO -->
+    <div class="LOGO">
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0">
+            <img
+              src="../../../assets/Image/sbs.webp"
+              height="39"
+              alt="SBS Logo"
+            />
+          </a>
+    </div>

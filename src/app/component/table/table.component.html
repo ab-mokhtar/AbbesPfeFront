@@ -1,0 +1,81 @@
+<mat-card>
+    <div style="margin-top: 15px; margin-right: 85%;">
+        <mat-list-item style="padding: 15px; margin-top: 25px;">
+        <a routerLink="/menubar" routerLinkActive="active" mat-raised-button color="accent">
+            <mat-icon>keyboard_backspace</mat-icon>Retour
+        </a>
+    </mat-list-item>
+    </div>
+
+    <mat-card-header>
+  <mat-form-field>
+    <!--        (keyup)="Filterchange($event)"      -->
+    <input matInput placeholder="Enter the text" [(ngModel)]="searchText"/>
+  </mat-form-field>
+  <button style="margin-left: 60%;" (click)="addcustomer()" mat-raised-button color="primary">Ajouter utilisateur (+)</button>
+
+    </mat-card-header>
+    <mat-card-content>
+
+    
+
+<table class="table table-hover table-striped" id="tblMain">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th style="width: 20%;padding-left: 25px;">Prenom</th>
+                    <th style="width: 20%;">Nom</th>
+                    <th style="width: 20%;">Profil</th>
+                    <th style="width: 20%;">Email</th>
+                    <th colspan="2" style="width: 5%;">Operations</th>
+                    <th>Plus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr *ngFor="let e of data | search: searchText">
+                    <td ng-repeat="x in id" ng-click="getValueOfTD(x)">{{e.id}}</td>
+                    <td style="width: 20%;padding-left: 25px;">{{e.userLastName}}</td>
+                    <td style="width: 20%;"> {{e.userFirstName}} </td>
+                    <td style="width: 20%;">{{e.roles[0].roleName}}</td>
+                    <td style="width: 20%;">{{e.userEmail}}</td>
+                        
+                        <td style="width: 5%;">
+                                <div class="upd_container">
+                                    <button class="butupd" id="butupd" (click)="handleButtonClick1(e)" mat-raised-button style="background-image: url(../../../assets/Image/wave.png)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-gear" viewBox="0 0 15 15">
+                                        <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm.256 7a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Zm3.63-4.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382l.045-.148ZM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0Z"/>
+                                    </svg>
+                                    </button>
+                                </div>
+                        </td>
+                        <td style="width: 5%;">
+                                <div class="del-container">
+                                    <button mat-raised-button (click)="deleteUser(e.userEmail)" style="background-color: darkred">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-person-x" viewBox="0 0 15 15">
+                                        <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </button>
+                                </div>
+                        </td>
+                        <td style="padding-left: 55px; "> 
+                          
+                            <button mat-raised-button (click)="openDialog()" mat-raised-button style="background-color: unset;">
+                                <app-modal-dialog *ngIf="isModalOpen"  (closeDialog)="closeModal()"></app-modal-dialog>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 448 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+                                        <path d="M48 32h352c26.51 0 48 21.49 48 48v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V80c0-26.51 21.49-48 48-48zm140.485 355.515l123.029-123.029c4.686-4.686 4.686-12.284 0-16.971l-123.029-123.03c-7.56-7.56-20.485-2.206-20.485 8.485v246.059c0 10.691 12.926 16.045 20.485 8.486z"/>
+                                    </svg>
+                                  
+                                </button>               
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+</mat-card-content>
+<br>
+<mat-card-footer>
+
+    <!-- <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator> -->
+
+</mat-card-footer>
+</mat-card>

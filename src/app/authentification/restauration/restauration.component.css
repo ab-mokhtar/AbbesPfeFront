@@ -1,0 +1,25 @@
+*{
+    font-family: sans-serif;
+    color: black;
+}
+.thebody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image:url(/your-pattern-url); */
+    background-image: url("../../../assets/Image/Meteor.svg");
+    height: 100%;
+    width: auto;
+}
+.centered{
+    background-color: rgba(0, 69, 158, 1);
+    align-items: center;
+    border: 1px solid rgba(0, 199, 158, 1);
+    padding: 50px;
+    border-radius: 35px;
+}
+form{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}

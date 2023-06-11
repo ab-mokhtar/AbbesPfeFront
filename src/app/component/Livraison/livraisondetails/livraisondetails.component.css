@@ -1,0 +1,45 @@
+.bdcontainer{
+    min-width: 100%;
+}
+td{
+    padding-right: 25px;
+}
+.bottr{
+    padding-right: 25px;
+}
+.ftbuts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 100%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.ftbuts button {
+    margin: 0 2px;
+} 
+.cardhead{
+    min-width: 100%;
+    color: black;
+    background-image: url(../../../../assets/Image/img1.jpg);  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 15px;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    
+}
+
+.input-field {
+    margin-right: 10px; /* Ajoute une marge à droite pour espacer les inputs horizontalement */
+}
+#adbut{
+    margin-bottom: 15px;
+}

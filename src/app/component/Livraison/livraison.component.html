@@ -1,0 +1,50 @@
+<app-usernav></app-usernav>
+<div class="container">
+  <div class="Firstcont">
+    <!-- Champ de recherche -->
+    <mat-form-field>
+    <input matInput type="text" [(ngModel)]="searchQuery" placeholder="Rechercher..." />
+    </mat-form-field>
+    <!-- Bouton "Ajouter Livraison" -->
+    <button class="btn btn-success btn-lg" (click)="ajouterLivraison()"><i class="fa fa-pencil" style="margin-right: 5px;"> </i> Ajouter Livraison</button>
+  </div>
+
+  <div class="secondcont">
+    <div class="back"></div>
+    <!-- Tableau des livraisons -->
+    <table class="full-width-table">
+      <!-- En-tête du tableau -->
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Trigramme</th>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <!-- Corps du tableau -->
+      <tbody>
+        <tr *ngFor="let livraison of livraisons | search: searchQuery">
+          <td>{{ livraison.id }}</td>
+          <td>{{ livraison.trigramme }}</td>
+          <td>{{ livraison.date }}</td>
+          <td>{{ livraison.description }}</td>
+          <td>
+            <button (click)="editLivraison(livraison.id)">
+              <i class="fa fa-pencil"></i> Détails
+            </button>
+            <button (click)="deleteLivraison(livraison.id)">
+              <i class="fa fa-trash"></i> Supprimer
+            </button>
+            <button (click)="detailLiv()">
+                <i class="fa fa-info-circle"></i> Détails
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+  <div style="height:25px"></div>
+</div>

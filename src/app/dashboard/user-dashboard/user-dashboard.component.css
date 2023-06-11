@@ -1,0 +1,189 @@
+body,head,footer{
+    background-color: whitesmoke;
+}
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .side-by-side {
+    display: flex;
+  }
+  
+  .column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .box {
+    height: 125px;
+    width: 225px;
+    margin-bottom: 15px;
+    /* background-color: #FFFFFF; */
+    /* box-shadow: inset 0 0 20px rgb(110, 110, 110); */
+    border-radius: 35px;
+    padding-top: 5px;
+    background: linear-gradient(to right, #5170FF , #FF66C4);
+    /* background-color: #ffffff; */
+    border: 1px solid whitesmoke;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  .boxspecial{
+    height: auto;
+    width: auto;
+
+  }
+  .mdbox{
+    height: 325px;
+    width: 550px;
+    margin: 20px;
+    background-color: #FFFFFF;
+    /* border: 1px solid black; */
+    border-radius: 35px;
+    padding-left:25px ;
+    padding-right:25px ;
+    box-shadow: inset 0 0 10px rgb(110, 110, 110);
+  }
+  #status-chart {
+    /* Add your styles for the chart container here */
+    width: 300px;
+    height: 200px;
+  }
+  h3{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    /* color: #003F7D; */
+    color: white;
+    font-weight: bold;
+    font-size:15px;
+  }
+  h2{
+    display: flex;
+    justify-content: center;
+    color: #222222;
+    margin-top: 15px; 
+    line-height: 1;
+  }
+  h1{
+    display: flex;
+    justify-content: center;
+    font-size:50px;
+    color: white;
+  }
+  .bottombox{
+    width: 250px;
+    height: auto;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 35px;
+    padding: 10px;
+    box-shadow: inset 0 0 10px rgb(110, 110, 110);
+  }
+
+
+
+  .addButton {
+    margin-top:50px;
+    outline: none;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    background-color: gold;
+    border: 10px solid gray;
+    border-bottom: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: gray;
+    font-size: -webkit-xxx-large;
+    font-weight: bold;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+  .mdbox:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out;
+  }
+  .bottombox:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.4s ease-in-out;
+    box-shadow: inset 0 0 10px rgb(110, 110, 110);
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  .bck{
+    background-image: url(../../../assets/Image/Jira2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120px;
+    width: 170px;
+    color: #2684FF; 
+  }
+  .bck2{
+
+    background-image: url(../../../assets/Image/redmine.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 135px;
+    width: 135px;
+    color: #e01717;
+  }
+  .bck3{
+
+    background-image: url(../../../assets/Image/Easyvista.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80px;
+    width: 100px;
+    margin-left: -25px;
+    margin-top: 45px;
+    color: #43AA54;
+  }
+  .bck4{
+
+    background-image: url(../../../assets/Image/woli.png); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 185px;
+    height: 95px;
+    margin-left: -25px;
+    margin-top: 15px;
+  }
+  mat-card:hover > .bck  {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  mat-card:hover > .bck2 {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  mat-card:hover > .bck3 {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  mat-card:hover > .bck4 {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  /* mat-card:hover{
+    transform: scale(1.01);
+    transition: transform 0.3s ease-in-out;
+  } */

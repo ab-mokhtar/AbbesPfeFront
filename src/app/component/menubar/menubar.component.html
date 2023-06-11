@@ -1,0 +1,68 @@
+<mat-toolbar color="white" class="mat-elevation-z8" style="filter: brightness(120%); border-bottom:1px solid #ccc!important;border-color: #f44336!important;">
+    <button (click)="drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+    </button>
+    <img src="../../../assets/Image/SBS.ico" style="width: 55px; height: 55px;"/>
+    <span class="example-spacer" style="text-shadow: #FC0 1px 0 10px;">SopraBanking Software</span>
+
+</mat-toolbar>
+
+<!--        Side bar        -->
+
+<mat-drawer-container autosize>
+    <mat-drawer #drawer opened="true" mode="side" position="start">
+    <mat-nav-list style="padding: 10px;">
+        <mat-list-item style="padding: 30px; padding-bottom: 100px;">
+			<div class="image_outer_container">
+				<div class="image_inner_container" >
+                    <div *ngFor="let e of data">
+					<img src="{{e.ImgProf}}">
+				</div>
+                </div>
+			</div>
+        </mat-list-item>
+
+        <mat-list-item style="position:flex; justify-content: center; align-items: center;">
+            <div *ngFor="let e of data">
+                <div class="usernamex">{{e.nom}}</div>
+            </div>
+        </mat-list-item>
+
+        <mat-list-item style="padding: 15px; margin-top: 25px;">
+            <button  mat-button><a href="http://localhost:4200/dashboard"><mat-icon>table</mat-icon> Dashboard</a></button>
+        </mat-list-item>
+
+        <mat-list-item style="padding: 15px;">
+            <button  mat-button><a href="http://localhost:4200/table"><mat-icon>account_circle</mat-icon> employees</a></button>
+        </mat-list-item>
+<!-- 
+        <mat-list-item style="padding: 15px;">
+            <button mat-button><a routerLink="/maint"><mat-icon>add_alert</mat-icon><span style="margin-left: 3px;">Demandes</span></a></button>
+        </mat-list-item> -->
+
+        <!-- <mat-list-item style="padding: 15px;">
+            <button mat-button><a  ><mat-icon>call_to_action</mat-icon><span style="margin-left: 3px;">Actions</span></a></button>
+        </mat-list-item> -->
+
+        <!-- <mat-list-item style="padding: 15px;">
+            <button mat-button><a ><mat-icon>explore</mat-icon><span style="margin-left: 3px;">Planning</span></a></button>
+        </mat-list-item> -->
+
+        <mat-list-item style="padding: 15px;">
+            <button mat-button><a href="http://localhost:4200/card" ><mat-icon>explore</mat-icon><span style="margin-left: 3px;">Parametrage</span></a></button>
+        </mat-list-item>
+
+        <mat-list-item style="padding: 15px; margin-top: 105px;">
+            <a mat-raised-button color="accent" routerLink="/auth"><mat-icon>settings_power</mat-icon>Deconnecter</a>
+        </mat-list-item>
+    </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div style="text-align: center;min-height: auto; max-width: auto;">
+
+            <router-outlet routerLinkActive="active">
+                <app-dashboard></app-dashboard>
+            </router-outlet>
+            </div>
+    </mat-drawer-content>
+</mat-drawer-container>

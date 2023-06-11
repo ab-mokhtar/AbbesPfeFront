@@ -1,0 +1,42 @@
+<form [formGroup]="myform" (ngSubmit)="Saveuser()">
+  <h1 mat-dialog-title>Ajouter un employé</h1>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Nom</mat-label>
+      <input formControlName="userLastName" matInput required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Prénom</mat-label>
+      <input formControlName="userFirstName" matInput required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input formControlName="userEmail" type="email" matInput required email>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Mot de passe</mat-label>
+      <input formControlName="userPassword" matInput required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Téléphone</mat-label>
+      <input formControlName="phone" matInput required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Adresse</mat-label>
+      <input formControlName="address" matInput required>
+    </mat-form-field>
+    <div style="display: flex; justify-content: center; padding-bottom: 25px;">
+      <mat-select formControlName="roles" placeholder="Sélectionner le Profil"  [(ngModel)]="role.roleName" required>
+        <mat-option *ngFor="let role of roles" [value]="role.roleName">{{ role.roleName }}</mat-option>
+      </mat-select>
+    </div>
+    
+    <div>
+      <mat-checkbox formControlName="active">Actif</mat-checkbox>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button type="submit" color="primary" [disabled]="myform.invalid">Enregistrer</button>
+    <button (click)="closepopup()" mat-raised-button color="warn">Annuler</button>
+  </div>
+</form>

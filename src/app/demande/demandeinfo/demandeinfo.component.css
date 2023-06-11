@@ -1,0 +1,65 @@
+.container {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+  
+  .left {
+    flex: 25%;
+    height: 700px;
+    width: 100%;
+    /* border-right: solid;
+    border-bottom: solid;
+    background-color: grey; */
+    padding: 10px;
+  }
+  .right {
+    flex: 75%;
+    height: 1000px;
+    width: 100%;
+    /* background-color: bisque; */
+    margin: 0;
+    padding: 0;
+  }
+  /* .leftcontainer{
+    margin-top: 25px;
+    border-right: solid;
+    margin-right: 5px;
+    margin-left: 10px;
+  } */
+   .input {
+    margin: 5px;
+    width: 100%;
+  }
+  .rightheader{
+    padding-top: -15px;
+  }
+
+
+  .righttab {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+  }
+  
+  .mainleft {
+    flex: 25%;
+    height: 1000px;
+    width: 90%;
+    /* background-color: bisque; */
+    border-right: solid;
+  }
+  .mainright {
+    flex: 75%;
+    height: 1000px;
+    width: 100%;
+    /* background-color: bisque; */
+    margin: 0;
+    padding: 0;
+  }
+  .inputleft{
+    margin: 5px;
+    width: 100%;
+  }

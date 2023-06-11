@@ -1,0 +1,15 @@
+<div class="note-container">
+    <textarea [(ngModel)]="noteText" id="notecont" style="border-radius: 15px;margin-bottom: 5px;" placeholder="Enter your note"></textarea>
+    <button class="savebutton" (click)="saveNote()" id="notecont">Save Note</button>
+    <button (click)="deleteAll()" id="notecont" style="background-color: rgb(0, 0, 0);color: white;margin-bottom: 25px;border-radius: 25px;">Delete All</button>
+    <div *ngIf="savedNotes.length > 0" id="notes-list">
+      <h3>Saved Notes:</h3>
+      <ul>
+        <li *ngFor="let note of savedNotes; let i = index" class="note-item">
+          <span class="notenumb">{{i+1}}</span><a>-</a>{{ note }}
+          <button (click)="deleteNote(i)" class="delete-button">X</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

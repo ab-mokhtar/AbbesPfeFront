@@ -1,0 +1,67 @@
+.note {
+    background-color: rgb(255, 240, 70);
+    min-height: 100px;
+    padding: 10px;
+    margin:10px;
+    width: 100px;
+    /* -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5); */
+}
+
+.close {
+   left: -14px;
+    top: -18px;
+    position: relative;
+    cursor:pointer;
+}
+
+.content {
+    outline: none;
+    height: 100px;
+    overflow-y: auto;
+}
+#notecontent{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#notecont{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.note-container {
+    max-height: auto; /* Adjust the maximum height as needed */
+    overflow-y: auto;
+    white-space: pre-wrap;
+  }
+  
+  div.note-container div.note {
+    word-wrap: break-word;
+    border-top: 2px solid orangered;
+    border-bottom: 2px solid orangered;
+  }
+  
+  .savebutton{
+    background-color: #2684FF; 
+    border-radius: 25px;
+    color: white;
+    margin-bottom: 1px;
+  }
+  li{
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  a{
+    padding-right: 15px;
+  }
+
+  .delete-button{
+    margin-left: 20px;    
+  }
+  

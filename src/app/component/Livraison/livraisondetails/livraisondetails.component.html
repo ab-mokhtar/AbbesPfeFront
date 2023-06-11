@@ -1,0 +1,74 @@
+<div class="bdcontainer">
+<mat-card>
+    <div class="cardhead">
+        <mat-card-header><h2>Ajouter une Livraison</h2></mat-card-header>
+    </div>
+    <mat-card-content>
+        <table class="example-full-width" cellspacing="0"><tr>
+            <td><mat-form-field class="example-full-width">
+              <mat-label>Trigramme</mat-label>
+              <input matInput>
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width">
+              <mat-label>Produit</mat-label>
+              <input matInput>
+            </mat-form-field></td>
+            <td><mat-form-field class="example-full-width">
+              <mat-label>Client</mat-label>
+              <input matInput>
+            </mat-form-field></td>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Choisir la date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>date de livraison</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker">
+                      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                    </mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>   
+            </td>
+          </tr>
+          <tr>
+            <td colspan="4" style="min-width: 100%;">
+                <mat-form-field style="min-width: 100%;">
+                    <textarea matInput placeholder="plus de détails"></textarea>
+                </mat-form-field>
+            </td>
+
+          </tr></table>
+    </mat-card-content>
+    <mat-card-footer style="margin-top: 15px;">
+        <!-- <div class="ftcontainer">
+            
+        </div> -->
+        <div class="ftbuts">
+            <button id="adbut" class="btn btn-primary" (click)="ajouterInputs()">
+                Ajouter un livrable
+            </button>
+            <div id="livrab" class="input-group" *ngFor="let input of inputs;let i = index">
+                <mat-form-field>
+                    <mat-label>Type de Ressource</mat-label>
+                    <input matInput [(ngModel)]="allLivrable[i * 2]">
+                  </mat-form-field><p style="color:#0a58ca">--</p>
+                  <mat-form-field>
+                    <mat-label>Nom de Ressource</mat-label>
+                    <input matInput [(ngModel)]="allLivrable[i * 2 + 1]">
+                  </mat-form-field>
+            </div>
+            <button id="savebtn" class="btn btn-primary" (click)="showAlert()">
+                Save Inputs
+              </button>
+        </div>
+    </mat-card-footer>
+</mat-card>
+<div class="ftbuts" style="
+        background-image: url(../../../../assets/Image/img1.png);  
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+    ">
+    <button type="button" class="btn btn-success btn-lg">Enregistrer</button>
+    <button type="button" class="btn btn-danger btn-md">Annuler</button>
+</div>
+</div>

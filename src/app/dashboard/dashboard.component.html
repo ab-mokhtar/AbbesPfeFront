@@ -1,0 +1,48 @@
+
+
+<div class="dashboard-container" style="
+/* background-image: url(../../assets/Image/dashbck.jpg);   */
+background-color: whitesmoke;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;">
+
+    <div class="side-by-side" style="padding-top: 10px;">
+      <div class="column">
+        <!-- <div class="boxspecial">    <div style="padding-bottom: 55px;padding-top: 25px; padding-left: 59px;">
+            <mat-list-item>
+            <a routerLink="/menubar" routerLinkActive="active" mat-raised-button color="accent">
+                <mat-icon>keyboard_backspace</mat-icon>Retour
+            </a>
+        </mat-list-item>
+        </div></div> -->
+        <div class="box"><h3>Nombre des Manageurs</h3><h1>{{NbManageurs}}</h1></div>
+        <div class="box"><h3>Nombre des Développeurs</h3><h1>{{NBDevs}}</h1></div>
+        <div class="box"><h3>Nombre des Employers</h3><h1>{{NbEmployers}}</h1></div>
+        <div class="box"><h3>Nombre des demandes</h3><h1>{{NbDemandes}}</h1></div>
+        <div class="box"><h3>Nombre des actions</h3><h1>{{NbActions}}</h1></div>
+      </div>
+      <div class="column">
+        <div class="mdbox"><h3>Status des actions</h3>
+            <router-outlet routerLinkActive="active">
+            <app-dashchart></app-dashchart>
+        </router-outlet>
+    </div>
+        <div class="mdbox"><h3>Priorités des actions</h3>
+            <router-outlet routerLinkActive="active">
+                <app-dashchart2></app-dashchart2>
+            </router-outlet>
+        </div>
+        <div id="status-chart"></div> <!-- Placeholder for the chart -->
+      </div>
+      <div class="column">
+        <div class="bottombox"><h2>Notes Personnel</h2>
+            <router-outlet routerLinkActive="active">
+                <app-note></app-note>
+                </router-outlet>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  

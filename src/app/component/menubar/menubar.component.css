@@ -1,0 +1,62 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  button:hover {
+    background-color: aqua;
+  }
+  button:active {
+    background-color: aqua;
+    box-shadow: 0 5px #666;
+    transform: translateX(10px);
+  }
+
+  .css-shadow {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #cddc39;
+    filter: drop-shadow(0 0 8px #ff5722);
+  }
+
+
+
+  .image_outer_container{
+    position:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    /* margin-bottom: 150px; */
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .image_inner_container{
+    border-radius: 50%;
+    padding: 5px;
+   background: #833ab4; 
+   background: -webkit-linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4); 
+   background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
+  }
+  .image_inner_container img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 5px solid white;
+  }
+  .mat-list-item{
+    background: #833ab4; 
+    background: -webkit-linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4); 
+    background: linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4);
+  }
+.usernamenav{
+  width: 50%;
+  padding-top: 5px; 
+  color: black; 
+  position:flex; justify-content: center; align-items: center;
+  margin: auto;
+}
+.usernamex{
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,34 @@
+<div class="container">
+  <form class="example-form" [formGroup]="myform" (ngSubmit)="save()">
+      <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Type de Statut</mat-label>
+            <input matInput placeholder="Type de Statut" formControlName="typeStatut" required >
+            <mat-icon matSuffix>public</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>valeur de Statut</mat-label>
+            <input matInput placeholder="valeur de reference" formControlName="valeurStatut" required>
+            <mat-icon matSuffix>merge_type</mat-icon>
+            <mat-hint>valeur de Statut</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline">
+            <mat-label>note de Statut</mat-label>
+            <input matInput placeholder="note de Statut" formControlName="noteStatut" required>
+            <mat-icon matSuffix>merge_type</mat-icon>
+            <mat-hint>note de Statut</mat-hint>
+          </mat-form-field>
+        </p>
+       
+        <p>      
+          <button mat-fab extended color="accent" [disabled]="myform.invalid">Valider</button>
+          <button mat-fab extended color="Basic"s>Annuler</button>
+      </p>
+  
+    </form>
+  </div>

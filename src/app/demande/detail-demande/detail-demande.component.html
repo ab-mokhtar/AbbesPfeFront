@@ -1,0 +1,40 @@
+<div class="container">
+    <h1>Détails de la demande</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Informations générales</h3>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>ID:</strong> {{ demande.id }}</li>
+          <li class="list-group-item"><strong>Objet de la demande:</strong> {{ demande.objetDemande }}</li>
+          <li class="list-group-item"><strong>Planifié:</strong> {{ demande.planifie }}</li>
+          <li class="list-group-item"><strong>Opportunité:</strong> {{ demande.opportunite }}</li>
+          <li class="list-group-item"><strong>BU:</strong> {{ demande.bu }}</li>
+          <li class="list-group-item"><strong>Résumé:</strong> {{ demande.resume }}</li>
+          <li class="list-group-item"><strong>Contexte:</strong> {{ demande.contexte }}</li>
+          <li class="list-group-item"><strong>Anticipation:</strong> {{ demande.anticipation }}</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h3>Informations supplémentaires</h3>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Phase:</strong> {{ demande.phase }}</li>
+          <li class="list-group-item"><strong>Domaine:</strong> {{ demande.dommaine }}</li>
+          <li class="list-group-item"><strong>Technologie:</strong> {{ demande.technologie }}</li>
+          <li class="list-group-item"><strong>Type de trigramme:</strong> {{ demande.typeTrigramme }}</li>
+          <li class="list-group-item"><strong>Valeur de trigramme:</strong> {{ demande.valeurTrigramme }}</li>
+          <li class="list-group-item"><strong>Charge:</strong> {{ demande.charge.typeCharge }}</li>
+          <li class="list-group-item"><strong>Référence:</strong> {{ demande.reference.typeReference }}</li>
+          <li class="list-group-item"><strong>Priorité:</strong> {{ demande.priorite.typePriorite }}</li>
+          
+          <li class="list-group-item"><strong>Commentaire:</strong> {{ demande.commentaire }}</li>
+          <li class="list-group-item"><strong>Client:</strong> {{ demande.client.nom }}</li>
+          <li class="list-group-item"><strong>Statut:</strong> {{ demande.statut.typeStatut }}</li>
+          <li class="list-group-item" *ngFor="let d of demande.date"><strong>{{d.typeDate.type}} :</strong> {{ d.valeurDate }}</li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inclure les scripts JavaScript de Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>

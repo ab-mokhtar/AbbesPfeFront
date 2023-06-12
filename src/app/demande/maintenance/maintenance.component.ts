@@ -5,6 +5,7 @@ import {MatDialogConfig} from '@angular/material/dialog';
 import { DemandeService } from 'src/app/service/demande.service';
 import { Demande } from 'src/app/Model/demande';
 import { DemandeinfoComponent } from '../demandeinfo/demandeinfo.component';
+import { DetailDemandeComponent } from '../detail-demande/detail-demande.component';
 
 @Component({
   selector: 'app-maintenance',
@@ -46,6 +47,16 @@ export class MaintenanceComponent implements OnInit {
       exitAnimationDuration: '500ms',
     });
      _popup.componentInstance.demande = demande;
+
+}
+openDetailDialog(demande:Demande) {
+  var _popup = this.dialog.open(DetailDemandeComponent, {
+    width: '55%',
+    height: '500px',
+    enterAnimationDuration: '500ms',
+    exitAnimationDuration: '500ms',
+  });
+   _popup.componentInstance.demande = demande;
 
 }
 }

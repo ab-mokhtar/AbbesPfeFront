@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-header">
+      <h5 class="card-title">Détails du planning</h5>
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label>Date :</label>
+        <p>{{ planning.date | date }}</p>
+      </div>
+      <div class="form-group">
+        <label>Description :</label>
+        <p>{{ planning.description }}</p>
+      </div>
+      <div class="form-group">
+        <label>Utilisateurs :</label>
+        <ul>
+          <li *ngFor="let user of planning.users">{{ user.userFirstName }} {{ user.userLastName }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

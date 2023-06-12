@@ -37,6 +37,7 @@ import { ListeChargeComponent } from './component/card/charge/liste-charge/liste
 import { ListedatesComponent } from './component/card/dates/listedates/listedates.component';
 import { ListerefComponent } from './component/card/ref/listeref/listeref.component';
 import { ClientComponent } from './component/client/client.component';
+import { PlanningComponent } from './component/planning/planning.component';
 const routes: Routes = [
   {path:'dashboard',component:DashboardComponent},
   {path:'card',component:CardComponent},
@@ -73,7 +74,9 @@ const routes: Routes = [
   {path:'listeCharge',component:ListeChargeComponent},
   {path:'listeDates',component:ListedatesComponent},
   {path:'ListeRef',component:ListerefComponent},
-  {path:'client',component:ClientComponent}
+  {path:'client',component:ClientComponent},
+  {path:'planning',component:PlanningComponent}
+
   
 
 

@@ -63,6 +63,10 @@ import { ListerefComponent } from './component/card/ref/listeref/listeref.compon
 import { UpdaterefComponent } from './component/card/ref/updateref/updateref.component';
 import { ListestatuComponent } from './component/card/statu/listestatu/listestatu.component';
 import { UpdatestatuComponent } from './component/card/statu/updatestatu/updatestatu.component';
+import { DetailDemandeComponent } from './demande/detail-demande/detail-demande.component';
+import { PlanningComponent } from './component/planning/planning.component';
+import { DetailPlanningComponent } from './component/planning/detail-planning/detail-planning.component';
+import { AddPlanningComponent } from './component/planning/add-planning/add-planning.component';
 @NgModule({
   declarations: [
     PopupAjouterClientComponent,
@@ -119,6 +123,10 @@ import { UpdatestatuComponent } from './component/card/statu/updatestatu/updates
     UpdaterefComponent,
     ListestatuComponent,
     UpdatestatuComponent,
+    DetailDemandeComponent,
+    PlanningComponent,
+    DetailPlanningComponent,
+    AddPlanningComponent,
   ],
   imports: [
     FullCalendarModule ,

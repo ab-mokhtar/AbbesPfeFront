@@ -1,0 +1,32 @@
+<form (submit)="submitForm()">
+    <div class="form-group">
+      <label for="descriptionAction">Description du Planning</label>
+      <input type="text" class="form-control" id="descriptionAction" [(ngModel)]="planning.description" name="descriptionAction" required>
+    </div>
+    
+   
+    
+    <div class="form-group" >
+      <label for="acteur">Acteur</label>
+      <select class="form-control" id="acteur" [(ngModel)]="usersSelected" name="acteur" multiple  required>
+        <option *ngFor="let acteur of acteurs" [value]="acteur.userEmail">{{ acteur.userFirstName }} {{ acteur.userLastName }}</option>
+      </select>
+    </div>
+   
+    
+   
+    
+  
+    
+    <div class="form-group">
+      <label for="debutAction">Date Planning</label>
+      <input type="date" class="form-control" id="debutAction" [(ngModel)]="planning.date" name="date" required>
+    </div>
+    
+  
+    
+   
+    
+    <button type="submit" class="btn btn-primary">Ajouter Planning</button>
+  </form>
+  

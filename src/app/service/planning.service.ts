@@ -3,25 +3,22 @@ import { UserStorageService } from './user-storage.service';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IEvent } from '../Model/event.model';
-const BASIC_URL = "http://localhost:8080/api/Planning";
+const BASIC_URL = "http://localhost:8088/api/v1/Planning/";
 @Injectable({
   providedIn: 'root'
 })
 export class PlanningService {
 
   constructor(private http: HttpClient) { }
-  private url: string;
-  private eventsList: IEvent[] = [];
+
  
 
   createPlanning(Planning: any) {
-    return this.http.post(BASIC_URL + `/createPlanning`, Planning, {
-      headers: this.createdAuthorizationHeader(),
-    });
+    return this.http.post(BASIC_URL + `create`, Planning);
   }
 
-  getAllPlanning(): Observable<any> {
-    return this.http.get('https://jsonplaceholder.typicode.com/todos')
+  getAllPlanning(): Observable<any[]> {
+    return this.http.get<any[]>(BASIC_URL+"getAll")
   }
   // getEvents(): Observable<IEvent[]>
   // {

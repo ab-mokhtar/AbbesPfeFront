@@ -14,7 +14,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // Checking if the request is intended for the motpasseoub endpoint
-        if (req.url.endsWith('/mdpoub')) {
+        if (req.url.endsWith('/mdpoub')||req.url.endsWith('/authenticate')) {
             return next.handle(req.clone({ headers: req.headers.delete('Authorization') }));
         }
 

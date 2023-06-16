@@ -70,7 +70,7 @@
       <button mat-button [matMenuTriggerFor]="beforeMenu"><i class="fas fa-qrcode fa-lg" style="color: SkyBlue;"></i></button>
       <mat-menu #beforeMenu="matMenu" xPosition="before">
         <button mat-menu-item>Profil</button>
-        <button mat-menu-item><a routerLinkActive="active" routerLink="/auth">Deconnecter</a></button>
+        <button mat-menu-item><a a *ngIf="isLoggedIn()" class="dropdown-item" (click)="logout()">Deconnecter</a></button>
       </mat-menu>
     </div>
       </div>

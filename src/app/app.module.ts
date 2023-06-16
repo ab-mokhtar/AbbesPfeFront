@@ -9,7 +9,7 @@ import { MenubarComponent } from './component/menubar/menubar.component';
 import { HomeComponent } from './component/home/home.component';
 import { CardComponent } from './component/card/card.component';
 import { TableComponent } from './component/table/table.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PopupComponent } from './component/popup/popup.component';
 import { SearchPipe } from './component/table/search.pipe';
 import { RefComponent } from './component/card/ref/ref.component';
@@ -67,6 +67,10 @@ import { DetailDemandeComponent } from './demande/detail-demande/detail-demande.
 import { PlanningComponent } from './component/planning/planning.component';
 import { DetailPlanningComponent } from './component/planning/detail-planning/detail-planning.component';
 import { AddPlanningComponent } from './component/planning/add-planning/add-planning.component';
+import { ForbiddenComponent } from './component/forbidden/forbidden.component';
+import { AuthGuard } from './auth/auth.guard';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { UserService } from './service/user.service';
 @NgModule({
   declarations: [
     PopupAjouterClientComponent,
@@ -127,6 +131,7 @@ import { AddPlanningComponent } from './component/planning/add-planning/add-plan
     PlanningComponent,
     DetailPlanningComponent,
     AddPlanningComponent,
+    ForbiddenComponent,
   ],
   imports: [
     FullCalendarModule ,
@@ -145,7 +150,17 @@ import { AddPlanningComponent } from './component/planning/add-planning/add-plan
       useFactory: adapterFactory,
     }),
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    {
+      //interceptor : interceptor will take token from localstorage(in our case) and put it inside header
+      provide : HTTP_INTERCEPTORS,
+      useClass : AuthInterceptor,
+      multi : true
+    },
+    //this is the service that we want to apply our interceptor
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,7 +14,7 @@
 			<img src="../../assets/Image/perso.svg" style="width: 500px;">
 		</div>
 		<div class="login-content">
-			<form action="index.html">
+			<form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
 				<img class="sbslogo" src="../../assets/Image/sbs.webp">
 				<h2 class="title">Welcome</h2>
            		<div class="input-div one">
@@ -23,7 +23,12 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Username</h5>
-           		   		<input type="text" class="input">
+							  <input type="email"
+							  ngModel
+							  name="userName"
+							  id="userName"
+							  class="form-control"
+							  placeholder="Email">
            		   </div>
            		</div>
            		<div class="input-div pass">
@@ -32,12 +37,19 @@
            		   </div>
            		   <div class="div">
            		    	<h5>Password</h5>
-           		    	<input type="password" class="input">
+						   <input type="password"
+						   ngModel
+						   name="userPassword"
+						   id="userPassword"
+						   class="form-control"
+						   placeholder="Password">
             	   </div>
             	</div>
             	<a routerLink="/reset" routerLinkActive="active" style="	display: block; text-align: right;"><div class="forget">Mot de passe oublié ?</div></a>
-					<input type="submit" class="btn" value="Connexion" routerLink="/menubar">
-            </form>
+				<button type="submit" class="btn btn-primary btn-block">
+					<span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+					Sign In
+				  </button>            </form>
         </div>
     </div>
 </body>

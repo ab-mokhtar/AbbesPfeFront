@@ -1,51 +1,10 @@
 <section class="thebody">
-    <div class="centered">
-      <h2>Compte oublié ?</h2>
-      <h4>Entrer votre adresse mail !</h4>
-      <form>
-        <input class="form-control" id="myText" type="text" placeholder="Email" value="@outlook.fr" style="width: auto;">
-        <button type="button" class="btn btn-primary" onclick="sendMail()">Envoyer</button>
-      </form>
-    </div>
-  </section>
-  
-  <script>
-    async function sendMail() {
-      const sender = 'sbsmailer5@gmail.com';
-      const recipient = 'abbbeees@gmail.com';
-      const subject = 'Mot de passe oublié';
-      const inputElement = document.getElementById('myText');
-      const message = "J'ai oublié mon mot de passe: " + inputElement.value;
-  
-      const data = {
-        Messages: [
-          {
-            From: { Email: sender },
-            To: [{ Email: recipient }],
-            Subject: subject,
-            TextPart: message,
-          },
-        ],
-      };
-  
-      try {
-        const response = await fetch('https://api.mailjet.com/v3.1/send', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: 'Basic YOUR_MAILJET_API_KEY',
-          },
-          body: JSON.stringify(data),
-        });
-  
-        if (response.ok) {
-          console.log('Email sent successfully');
-        } else {
-          console.error('Failed to send email:', response.statusText);
-        }
-      } catch (error) {
-        console.error('Error sending email:', error);
-      }
-    }
-  </script>
-  
+  <div class="centered">
+    <h2>Compte oublié ?</h2>
+    <h4>Entrer votre adresse mail !</h4>
+    <form  [formGroup]="myform" (ngSubmit)="sendMail()">
+      <input class="form-control" id="email" type="email" placeholder="Email" formControlName="email"  required style="width: auto;">
+      <button type="submit" class="btn btn-primary"[disabled]="myform.invalid" >Envoyer</button>
+    </form>
+  </div>
+</section>

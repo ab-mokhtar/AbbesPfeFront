@@ -6,7 +6,7 @@ import { User } from 'src/app/Model/user';
 import { MasterService } from 'src/app/service/master.service';
 import { RoleService } from 'src/app/service/role.service';
 import { UserService } from 'src/app/service/user.service';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 @Component({
   selector: 'app-popup',
   templateUrl: './popup.component.html',
@@ -17,7 +17,7 @@ export class PopupComponent implements OnInit {
   editdata: any;
   closemessage = 'closed using directive';
   user: User = new User();
-roles!:Role[]
+roles:Role[]=[]
 role:Role=new Role()
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -25,7 +25,7 @@ role:Role=new Role()
     private buildr: FormBuilder,
     private service: MasterService,
     private userService: UserService,
-    private rolesService:RoleService
+    private rolesService:RoleService,
   ) {}
 
   ngOnInit(): void {
@@ -35,6 +35,7 @@ role:Role=new Role()
     }
     this.rolesService.getAllRoles().subscribe(data=>{
       this.roles=data
+      console.log(data.length)
     })
   }
 

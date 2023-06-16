@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserAuthService } from 'src/app/service/user-auth-service.service';
 
 @Component({
   selector: 'app-usernav',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class UsernavComponent {
 
+  constructor(private userAuthService: UserAuthService, private router: Router) { }
+
+  public isLoggedIn() {
+    return this.userAuthService.isLoggedIn();
+  }
+
+  public logout() {
+    this.userAuthService.clear();
+    this.router.navigate(['/auth']);
+  }
 }

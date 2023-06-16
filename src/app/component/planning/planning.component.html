@@ -1,4 +1,4 @@
 <div class="container">
-<button (click)="CreatePlanning()">AddPlanning</button>
+<button (click)="CreatePlanning()"*ngIf="roleMatching(['manager','team_leader'])">AddPlanning</button>
     <full-calendar [options]="calendarOptions"></full-calendar>
 </div>

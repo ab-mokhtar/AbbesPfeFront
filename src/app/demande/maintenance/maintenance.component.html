@@ -10,7 +10,7 @@
                     padding: 10px;
                     margin-left:195%;">
 
-                    <a (click)="openDialog()" class="btn btn-success" data-toggle="modal"
+                    <a (click)="openDialog()" *ngIf="roleMatching(['manager','team_leader'])"class="btn btn-success" data-toggle="modal"
                     style="  width: 72%;
                     float: left;">
                         <i class="material-icons">&#xE147;</i> <span style="margin-left: 5px;">Ajouter une Demande</span>
@@ -73,8 +73,8 @@
                     <td style="width: 20%;">{{d.dommaine}}</td>
                     <td style="width: 20%;">{{d.contexte}}</td>
                     <td style="width: 20%;">{{d.priorite.valeurPriorite}}</td>
-                    <td><button (click)="openUpdateDialog(d)" class="update-button">Update</button></td>
-                    <td><button (click)="deleteDemande(d.id)" class="delete-button">Delete</button></td>
+                    <td><button  *ngIf="roleMatching(['manager','team_leader'])" (click)="openUpdateDialog(d)" class="update-button">Update</button></td>
+                    <td><button *ngIf="roleMatching(['manager','team_leader'])"(click)="deleteDemande(d.id)" class="delete-button">Delete</button></td>
 
 
                     <td> 

@@ -6,6 +6,7 @@ import { DemandeService } from 'src/app/service/demande.service';
 import { Demande } from 'src/app/Model/demande';
 import { DemandeinfoComponent } from '../demandeinfo/demandeinfo.component';
 import { DetailDemandeComponent } from '../detail-demande/detail-demande.component';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-maintenance',
@@ -14,7 +15,7 @@ import { DetailDemandeComponent } from '../detail-demande/detail-demande.compone
 })
 export class MaintenanceComponent implements OnInit {
   demandes:Demande[]=[]
-  constructor(private dialog: MatDialog,private demandeService:DemandeService) {}
+  constructor(private dialog: MatDialog,private demandeService:DemandeService,private userservice:UserService) {}
   ngOnInit(): void {
    this.demandeService.getAllDemandes().subscribe(data=>{
     this.demandes=data;
@@ -58,5 +59,9 @@ openDetailDialog(demande:Demande) {
   });
    _popup.componentInstance.demande = demande;
 
+}
+roleMatching(role : any){
+  //console.log("matching = " + this.userService.roleMatch(role));
+  return this.userservice.roleMatch(role);
 }
 }

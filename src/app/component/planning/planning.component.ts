@@ -9,6 +9,7 @@ import { DetailPlanningComponent } from './detail-planning/detail-planning.compo
 import { Planning } from 'src/app/Model/planning';
 import { PlanningService } from 'src/app/service/planning.service';
 import { AddPlanningComponent } from './add-planning/add-planning.component';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-planning',
@@ -29,7 +30,7 @@ export class PlanningComponent {
    eventClick: this.handleDateClick.bind(this) as any
 
  };
- constructor(private dialog: MatDialog,private planningService:PlanningService){}
+ constructor(private dialog: MatDialog,private planningService:PlanningService,private userservice:UserService){}
  ngOnInit(): void {
  this.planningService.getAllPlanning().subscribe(async res=>{
    this.plannings=res
@@ -80,5 +81,9 @@ this.popup.closePopup()}
     exitAnimationDuration: '500ms',
   });
 
+}
+roleMatching(role : any){
+  //console.log("matching = " + this.userService.roleMatch(role));
+  return this.userservice.roleMatch(role);
 }
 }
